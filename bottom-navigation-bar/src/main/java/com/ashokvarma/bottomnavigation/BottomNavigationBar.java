@@ -108,6 +108,7 @@ public class BottomNavigationBar extends FrameLayout {
     private float mElevation;
 
     private boolean mAutoHideEnabled;
+    private boolean mExpandTabWidthToFitScreen;
     private boolean mIsHidden = false;
 
     ///////////////////////////////////////////////////////////////////////////
@@ -150,6 +151,7 @@ public class BottomNavigationBar extends FrameLayout {
             mInActiveColor = typedArray.getColor(R.styleable.BottomNavigationBar_bnbInactiveColor, Color.LTGRAY);
             mBackgroundColor = typedArray.getColor(R.styleable.BottomNavigationBar_bnbBackgroundColor, Color.WHITE);
             mAutoHideEnabled = typedArray.getBoolean(R.styleable.BottomNavigationBar_bnbAutoHideEnabled, true);
+            mExpandTabWidthToFitScreen = typedArray.getBoolean(R.styleable.BottomNavigationBar_bnbExpandTabWidthToFitScreen, true);
             mElevation = typedArray.getDimension(R.styleable.BottomNavigationBar_bnbElevation, getResources().getDimension(R.dimen.bottom_navigation_elevation));
 
             setAnimationDuration(typedArray.getInt(R.styleable.BottomNavigationBar_bnbAnimationDuration, DEFAULT_ANIMATION_DURATION));
@@ -378,7 +380,7 @@ public class BottomNavigationBar extends FrameLayout {
 
             if (mMode == MODE_FIXED) {
 
-                int[] widths = BottomNavigationHelper.getMeasurementsForFixedMode(getContext(), screenWidth, mBottomNavigationItems.size(), mScrollable);
+                int[] widths = BottomNavigationHelper.getMeasurementsForFixedMode(getContext(), screenWidth, mBottomNavigationItems.size(), mScrollable, mExpandTabWidthToFitScreen);
                 int itemWidth = widths[0];
 
                 for (BottomNavigationItem currentItem : mBottomNavigationItems) {

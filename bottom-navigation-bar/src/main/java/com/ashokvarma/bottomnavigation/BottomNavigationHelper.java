@@ -11,7 +11,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.widget.FrameLayout;
-
 import com.ashokvarma.bottomnavigation.utils.Utils;
 
 /**
@@ -35,7 +34,7 @@ class BottomNavigationHelper {
      * @param scrollable  is bottom bar scrollable
      * @return width of each tab
      */
-    public static int[] getMeasurementsForFixedMode(Context context, int screenWidth, int noOfTabs, boolean scrollable) {
+    public static int[] getMeasurementsForFixedMode(Context context, int screenWidth, int noOfTabs, boolean scrollable, boolean expandTabWidthToFitScreen) {
 
         int[] result = new int[2];
 
@@ -44,10 +43,12 @@ class BottomNavigationHelper {
 
         int itemWidth = screenWidth / noOfTabs;
 
-        if (itemWidth < minWidth && scrollable) {
-            itemWidth = (int) context.getResources().getDimension(R.dimen.fixed_min_width);
-        } else if (itemWidth > maxWidth) {
-            itemWidth = maxWidth;
+        if (!expandTabWidthToFitScreen) {
+            if (itemWidth < minWidth && scrollable) {
+                itemWidth = (int) context.getResources().getDimension(R.dimen.fixed_min_width);
+            } else if (itemWidth > maxWidth) {
+                itemWidth = maxWidth;
+            }
         }
 
         result[0] = itemWidth;

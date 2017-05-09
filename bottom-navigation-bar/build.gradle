@@ -1,23 +1,23 @@
 apply plugin: 'com.android.library'
 
 ext {
-    bintrayRepo = 'maven'
+    bintrayRepo = 'dynastyX'
     bintrayName = 'BottomNavigationBar'
 
-    publishedGroupId = 'com.ashokvarma.android'
+    publishedGroupId = 'com.dynastyx.android'
     libraryName = 'Bottom Navigation Bar'
     artifact = 'bottom-navigation-bar'
 
     libraryDescription = 'Bottom navigation bars make it easy to explore and switch between top-level views in a single tap.'
 
-    siteUrl = 'https://github.com/Ashok-Varma/bottomnavigation'
-    gitUrl = 'https://github.com/Ashok-Varma/bottomnavigation.git'
+    siteUrl = 'https://github.com/dynastyX/BottomNavigation'
+    gitUrl = 'https://github.com/dynastyX/BottomNavigation.git'
 
     libraryVersion = project.APP_VERSION_NAME
 
-    developerId = 'Ashok-Varma'
-    developerName = 'Ashok Varma'
-    developerEmail = 'ashokvitece@gmail.com'
+    developerId = 'dynastyx666'
+    developerName = 'dynastyx666'
+    developerEmail = 'dynastyx666@gmail.com'
 
     licenseName = 'The Apache Software License, Version 2.0'
     licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
